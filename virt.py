@@ -1,0 +1,1 @@
+# sbse pehle command palette open ki using ctrl+shift+P se then create enviroment then location choose ki 
