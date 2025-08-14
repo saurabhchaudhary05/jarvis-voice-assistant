@@ -1,6 +1,5 @@
 import wikipedia
 import webbrowser
-from googletrans import Translator
 from speakModule import speak
 
 def search_wikipedia(query, detailed=False, language='en', translate_to=None):
@@ -17,11 +16,8 @@ def search_wikipedia(query, detailed=False, language='en', translate_to=None):
             summary = wikipedia.summary(query, sentences=2)
 
             if translate_to:
-                translator = Translator()
-                translated = translator.translate(summary, dest=translate_to).text
-                speak(translated)
-            else:
-                speak(summary)
+                speak("Translation service is not available. Here's the summary in English:")
+            speak(summary)
 
     except wikipedia.exceptions.DisambiguationError as e:
         speak("The topic is ambiguous, please be more specific.")
